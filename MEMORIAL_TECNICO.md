@@ -3,7 +3,7 @@
 **Portal de Solicitações Internas — bit Soluções**  
 Teste técnico para a vaga de Desenvolvedor(a) de Sistemas Júnior
 
-Este documento registra as tecnologias escolhidas, as decisões de arquitetura e uma avaliação crítica do que foi entregue. Escrevi tentando deixar explícito o raciocínio por trás de cada decisão, inclusive nos pontos em que a solução é deliberadamente simples e naqueles que eu faria diferente se o destino fosse produção corporativa.
+Este documento registra as tecnologias escolhidas, as decisões de arquitetura e uma avaliação crítica do que foi entregue. Escrevi tentando deixar explícito o raciocínio por trás de cada decisão, inclusive nos pontos em que a solução é simples e naqueles que eu faria diferente se o destino fosse produção corporativa.
 
 ## 1. Tecnologias utilizadas
 
@@ -25,7 +25,7 @@ Deixei de fora desta entrega: frameworks frontend, ORM, biblioteca de validaçã
 
 O enunciado deixa a stack livre, e a primeira decisão que tomei foi usar uma linguagem só nas duas pontas. Com JavaScript no servidor e no navegador, não há troca de contexto mental, as convenções de nomenclatura e os formatos de dados são compartilhados, e quem for executar o projeto precisa instalar um único runtime — a API, o script de banco e o servidor de arquivos estáticos saem do mesmo processo. Para uma API de consultas curtas como esta, o modelo de I/O assíncrono do Node sobra.
 
-Comparei com as alternativas que conheço. Java com Spring Boot e C# com ASP.NET oferecem mais estrutura para sistemas grandes, mas a cerimônia de configuração e o tempo de partida seriam desproporcionais para cinco dias de prazo e dez rotas. Python com Flask é igualmente viável; Django traria autenticação e ORM prontos, mas com um volume de convenções que eu teria que aprender e justificar sem aproveitar. A unificação com o frontend pesou a favor do Node. Em manutenção, o ecossistema npm e a disponibilidade de profissionais são pontos fortes; a escalabilidade horizontal é possível enquanto o estado ficar fora do processo, o que a autenticação sem sessão em memória favorece.
+Comparei com as alternativas que conheço. Java com Spring Boot e C# com ASP.NET oferecem mais estrutura para sistemas grandes, mas a cerimônia de configuração e o tempo de partida seriam desproporcionais para cinco dias de prazo e dez rotas, Python com Flask é igualmente viável. A unificação com o frontend pesou a favor do Node. Em manutenção, o ecossistema npm e a disponibilidade de profissionais são pontos fortes; a escalabilidade horizontal é possível enquanto o estado ficar fora do processo, o que a autenticação sem sessão em memória favorece.
 
 ### 2.2 Express
 
